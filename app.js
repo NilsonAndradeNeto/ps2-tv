@@ -22,6 +22,19 @@
     } catch (e) {}
   }
 
+  function isFull() {
+    return !!(document.fullscreenElement || document.webkitFullscreenElement);
+  }
+
+  // TV não tem F11: qualquer tecla do controle remoto, clique ou toque
+  // coloca em tela cheia (o navegador exige um gesto do usuário).
+  ['keydown', 'pointerdown', 'mousedown', 'touchstart', 'click'].forEach(function (t) {
+    window.addEventListener(t, function () { if (!isFull()) goFullscreen(); }, true);
+  });
+  document.addEventListener('fullscreenchange', function () {
+    document.getElementById('hint').textContent = isFull() ? 'Voltar: menu' : 'Aperte qualquer botão do controle remoto para tela cheia';
+  });
+
   function showMenu() {
     ui.classList.remove('hidden');
     pick.focus();

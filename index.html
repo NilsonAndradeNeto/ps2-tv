@@ -29,7 +29,7 @@
   #status { min-height:1.4em; color:var(--fg); }
   #status.err { color:#ff6b6b; }
   #pad { color:var(--muted); font-size:clamp(13px,1.6vw,18px); }
-  #hint { position:fixed; right:16px; bottom:12px; color:#666; font-size:13px; z-index:5; pointer-events:none; }
+  #hint { position:fixed; right:16px; bottom:12px; color:#bbb; font-size:clamp(13px,1.6vw,18px); z-index:11; pointer-events:none; }
 </style>
 </head>
 <body>
@@ -50,7 +50,7 @@
   <div id="status">Carregando emulador…</div>
   <div id="pad">Controle: nenhum detectado. Aperte qualquer botão do controle.</div>
 </div>
-<div id="hint">Voltar/Esc: menu</div>
+<div id="hint">Aperte qualquer botão do controle remoto para tela cheia</div>
 
 <script src="gamepad.js"></script>
 <script src="app.js"></script>
