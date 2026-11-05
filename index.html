@@ -26,6 +26,9 @@
     border:4px solid transparent; background:var(--accent); color:var(--accent-fg); cursor:pointer; }
   .btn:focus { outline:none; border-color:#fff; box-shadow:0 0 0 6px rgba(255,122,26,.45); }
   .btn.sec { background:#2a2a2a; color:var(--fg); }
+  .filebtn { position:relative; display:inline-block; overflow:hidden; }
+  .filebtn input { position:absolute; inset:0; width:100%; height:100%; opacity:0; cursor:pointer; font-size:200px; }
+  .filebtn:focus-within { outline:none; border-color:#fff; box-shadow:0 0 0 6px rgba(255,122,26,.45); }
   #status { min-height:1.4em; color:var(--fg); }
   #status.err { color:#ff6b6b; }
   #pad { color:var(--muted); font-size:clamp(13px,1.6vw,18px); }
@@ -44,7 +47,7 @@
   <h1>PS2 na TV</h1>
   <p>Escolha o arquivo do seu jogo (.iso, .cso, .chd) que está no aparelho ou no pendrive. O arquivo é lido só neste aparelho e não é enviado para nenhum lugar.</p>
   <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
-    <button id="pick" class="btn" autofocus>📂 Escolher jogo</button>
+    <label class="btn filebtn" id="pickwrap">📂 Escolher jogo<input id="pick" type="file" autofocus></label>
     <button id="full" class="btn sec">⛶ Tela cheia</button>
   </div>
   <div id="status">Carregando emulador…</div>
